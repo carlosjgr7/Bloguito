@@ -23,5 +23,9 @@ class DependencyModule {
         return Room.databaseBuilder(appContex, BloguitoDataBase::class.java, "BloguitoDB").build()
     }
 
+    @Provides
+    @Singleton
+    fun provideContext(@ApplicationContext appContex: Context) =  appContex
+
 
 }

@@ -1,46 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/ps1"
     tools:context=".ui.presentation.PresentationFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/presentation_card"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        app:cardCornerRadius="28dp"
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/cyan"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        >
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="17dp"
-            android:src="@drawable/baseline_keyboard_arrow_right_24"
-            />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
-    </androidx.cardview.widget.CardView>
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/slider"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    <LinearLayout
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dots_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="@+id/presentation_card"
-        app:layout_constraintBottom_toBottomOf="@id/presentation_card"
+        app:dotsColor="@color/white"
+        app:dotsCornerRadius="8dp"
+        app:dotsSize="12dp"
+        app:dotsSpacing="3dp"
+        app:selectedDotColor="@color/blue"
+        app:progressMode="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="30dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="32dp"
         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

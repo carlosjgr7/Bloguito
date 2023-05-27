@@ -20,6 +20,11 @@
             app:destination="@id/loginFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_splashFragment_to_presentationFragment"
+            app:destination="@id/presentationFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -29,5 +34,16 @@
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/presentationFragment"
+        android:name="com.carlosjgr7.bloguito.ui.presentation.PresentationFragment"
+        android:label="fragment_presentation"
+        tools:layout="@layout/fragment_presentation" >
+        <action
+            android:id="@+id/action_presentationFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/down_to_center"
+            app:exitAnim="@anim/center_to_down" />
     </fragment>
 </navigation>

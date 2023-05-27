@@ -17,7 +17,15 @@
     <color name="green_semi_dark">#688856</color>
     <color name="red">#7E1E1E</color>
     <color name="amarillo">#8C8C4C</color>
+    <color name="amarillo_pollito">#DFDF21</color>
     <color name="marron">#744114</color>
     <color name="cyan">#006c7d</color>
+    <color name="cyan2">#51AFBD</color>
+    <color name="cyan3">#93AEB3</color>
+
+
+    <color name="pink_light">#F890BC</color>
+    <color name="pink_dark">#EB5595</color>
+
 
 </resources>
