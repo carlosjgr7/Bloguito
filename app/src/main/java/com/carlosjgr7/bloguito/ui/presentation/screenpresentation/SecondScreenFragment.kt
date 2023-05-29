@@ -7,8 +7,6 @@ import androidx.viewpager2.widget.ViewPager2
 import com.carlosjgr7.bloguito.R
 import com.carlosjgr7.bloguito.databinding.FragmentSecondScreenBinding
 
-//
-
 class SecondScreenFragment(private val viewPager: ViewPager2) : Fragment(R.layout.fragment_second_screen) {
 
     private lateinit var binding:FragmentSecondScreenBinding

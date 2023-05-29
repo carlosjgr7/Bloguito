@@ -14,7 +14,6 @@ class OnBoardingPageAdapter(
 
     ) : FragmentStateAdapter(fm , lifecycle) {
 
-
     override fun getItemCount()= fragmentList.size
 
     override fun createFragment(position: Int)= fragmentList[position]
