@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.carlosjgr7.bloguito.ui.home.HomeFragment"
+        android:name="com.carlosjgr7.bloguito.home.HomeFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.carlosjgr7.bloguito.ui.SplashFragment"
+        android:name="com.carlosjgr7.bloguito.splashscreen.ui.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.carlosjgr7.bloguito.ui.login.LoginFragment"
+        android:name="com.carlosjgr7.bloguito.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/presentationFragment"
-        android:name="com.carlosjgr7.bloguito.ui.presentation.PresentationFragment"
+        android:name="com.carlosjgr7.bloguito.presentation.PresentationFragment"
         android:label="fragment_presentation"
         tools:layout="@layout/fragment_presentation" >
         <action

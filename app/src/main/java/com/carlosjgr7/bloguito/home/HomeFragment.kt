@@ -1,4 +1,4 @@
-package com.carlosjgr7.bloguito.ui.home
+package com.carlosjgr7.bloguito.home
 
 import android.os.Bundle
 import android.view.View

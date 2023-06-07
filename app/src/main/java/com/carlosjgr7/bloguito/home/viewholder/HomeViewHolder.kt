@@ -1,4 +1,4 @@
-package com.carlosjgr7.bloguito.ui.home
+package com.carlosjgr7.bloguito.home.viewholder
 
 import android.content.Context
 import androidx.recyclerview.widget.RecyclerView

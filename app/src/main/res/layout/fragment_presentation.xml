@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ps1"
-    tools:context=".ui.presentation.PresentationFragment">
+    tools:context=".presentation.PresentationFragment">
 
 
     <androidx.viewpager2.widget.ViewPager2

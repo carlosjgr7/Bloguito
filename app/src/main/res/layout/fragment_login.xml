@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_semi_dark"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".login.LoginFragment">
 
 
     <ImageView
@@ -13,7 +13,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="72dp"
-        android:src="@drawable/vlogger"
+        android:src="@drawable/blogoicon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

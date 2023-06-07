@@ -1,4 +1,4 @@
-package com.carlosjgr7.bloguito.ui.presentation.screenpresentation
+package com.carlosjgr7.bloguito.presentation.ui.screenpresentation
 
 import android.os.Bundle
 import android.view.View

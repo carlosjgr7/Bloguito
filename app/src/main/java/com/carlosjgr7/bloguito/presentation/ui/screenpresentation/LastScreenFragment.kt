@@ -1,25 +1,20 @@
-package com.carlosjgr7.bloguito.ui.presentation.screenpresentation
+package com.carlosjgr7.bloguito.presentation.ui.screenpresentation
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.datastore.dataStore
-import androidx.datastore.preferences.core.booleanPreferencesKey
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.carlosjgr7.bloguito.MainActivity
 import com.carlosjgr7.bloguito.R
-import com.carlosjgr7.bloguito.dataStore
 import com.carlosjgr7.bloguito.databinding.FragmentLastScreenBinding
+import com.carlosjgr7.bloguito.presentation.ui.viewmodel.PresentationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
-class LastScreenFragment() : Fragment(R.layout.fragment_last_screen) {
+@AndroidEntryPoint
+class LastScreenFragment(private val presentationViewModel: PresentationViewModel) : Fragment(R.layout.fragment_last_screen) {
 
     private lateinit var binding:FragmentLastScreenBinding
 
@@ -30,10 +25,9 @@ class LastScreenFragment() : Fragment(R.layout.fragment_last_screen) {
 
         binding.btnToLogin.setOnClickListener{
             viewLifecycleOwner.lifecycleScope.launch(Dispatchers.IO) {
-                setViewd()
+                presentationViewModel.putViewedPresentation()
                 withContext(Dispatchers.Main){
                     findNavController().navigate(R.id.action_presentationFragment_to_loginFragment)
-
                 }
             }
 
@@ -42,9 +36,5 @@ class LastScreenFragment() : Fragment(R.layout.fragment_last_screen) {
 
     }
 
-    private suspend fun setViewd() {
-        context?.dataStore?.edit {
-            it[booleanPreferencesKey("PRESENTATION_VIWED")] = true
-        }
-    }
+
 }

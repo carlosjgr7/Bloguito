@@ -1,4 +1,4 @@
-package com.carlosjgr7.bloguito.ui.login.viewmodel
+package com.carlosjgr7.bloguito.login.viewmodel
 
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject

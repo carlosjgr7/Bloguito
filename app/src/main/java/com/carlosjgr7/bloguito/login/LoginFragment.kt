@@ -1,4 +1,4 @@
-package com.carlosjgr7.bloguito.ui.login
+package com.carlosjgr7.bloguito.login
 
 import android.os.Bundle
 import android.text.Editable
@@ -10,19 +10,24 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.carlosjgr7.bloguito.R
 import com.carlosjgr7.bloguito.databinding.FragmentLoginBinding
 import com.carlosjgr7.bloguito.databinding.FragmentSplashBinding
+import com.carlosjgr7.bloguito.login.viewmodel.LoginViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.Executor
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private lateinit var binding: FragmentLoginBinding
     private lateinit var executor: Executor
     private lateinit var biometricPrompt: BiometricPrompt
     private lateinit var promptInfo: BiometricPrompt.PromptInfo
+    private val viewModel: LoginViewModel by viewModels()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -2,6 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Bloguito" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="colorPrimary">@color/blue_dark</item>
+        <item name="colorPrimary">@color/blue_semi_dark</item>
+        <item name="android:windowBackground">@color/black</item>
     </style>
+    <style name="Theme.Bloguito" parent="Base.Theme.Bloguito" />
 </resources>

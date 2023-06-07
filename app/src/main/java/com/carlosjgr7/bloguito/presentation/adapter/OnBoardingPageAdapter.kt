@@ -1,4 +1,4 @@
-package com.carlosjgr7.bloguito.data.presentacion.adapter
+package com.carlosjgr7.bloguito.presentation.adapter
 
 import android.content.Context
 import androidx.fragment.app.Fragment
