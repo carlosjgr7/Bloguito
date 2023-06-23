@@ -13,8 +13,9 @@ class HomeViewHolder(
 
     fun bind(item: Post) {
         Glide.with(context).load(item.post_image).centerCrop().into(binding.postImage)
-        Glide.with(context).load(item.profile_picture).centerCrop().into(binding.imgProfile)
-        binding.tvName.text = item.profile_name
+        Glide.with(context).load(item.post_profile_picture).centerCrop().into(binding.imgProfile)
+        binding.tvName.text = item.post_profile_name
         binding.tvDate.text = "hace 2 horas"
+        binding.tvDescription.text = item.post_description
     }
 }

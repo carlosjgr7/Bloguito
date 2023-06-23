@@ -1,12 +1,9 @@
 package com.carlosjgr7.bloguito
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.preferences.preferencesDataStore
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.carlosjgr7.bloguito.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint

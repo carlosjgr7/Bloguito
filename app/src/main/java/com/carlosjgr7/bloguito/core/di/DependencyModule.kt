@@ -2,14 +2,13 @@ package com.carlosjgr7.bloguito.core.di
 
 import android.content.Context
 import androidx.room.Room
-import com.carlosjgr7.bloguito.data.local.BloguitoDataBase
+import com.carlosjgr7.bloguito.home.data.network.HomeDataSource
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -19,13 +18,15 @@ class DependencyModule {
 
     @Provides
     @Singleton
-    fun provideMovieDatabase(@ApplicationContext appContex: Context): BloguitoDataBase {
-        return Room.databaseBuilder(appContex, BloguitoDataBase::class.java, "BloguitoDB").build()
+    fun provideContext(@ApplicationContext appContex: Context) =  appContex
+
+    @Provides
+    fun provideFirestore(): FirebaseFirestore {
+        return FirebaseFirestore.getInstance()
     }
 
     @Provides
-    @Singleton
-    fun provideContext(@ApplicationContext appContex: Context) =  appContex
-
-
+    fun providePostsRepository(firestore: FirebaseFirestore): HomeDataSource {
+        return HomeDataSource(firestore)
+    }
 }
