@@ -15,19 +15,6 @@ import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 class HomeDataSource @Inject constructor(private val firestore: FirebaseFirestore) {
-
-    //sin actualizacion en tiempo real
-//    suspend fun getLatestPosts() = try {
-//        firestore.collection("posts")
-//            .get()
-//            .await()
-//            .toObjects(Post::class.java)
-//            .asFlow()
-//    } catch (e: Exception) {
-//        throw e
-//    }
-
-    //con actualizacion en tiempo real
     fun getLatestPosts(): Flow<List<Post>> = callbackFlow {
         val subscription = firestore.collection("posts")
             .addSnapshotListener { snapshot, e ->

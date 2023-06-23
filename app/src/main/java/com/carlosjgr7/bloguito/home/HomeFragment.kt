@@ -1,8 +1,6 @@
 package com.carlosjgr7.bloguito.home
 
-import android.opengl.Visibility
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
