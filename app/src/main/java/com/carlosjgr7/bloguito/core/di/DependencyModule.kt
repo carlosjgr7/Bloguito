@@ -1,8 +1,7 @@
 package com.carlosjgr7.bloguito.core.di
 
 import android.content.Context
-import androidx.room.Room
-import com.carlosjgr7.bloguito.home.data.network.HomeDataSource
+import com.carlosjgr7.bloguito.home.data.network.HomeNetworkDataSource
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
@@ -26,7 +25,7 @@ class DependencyModule {
     }
 
     @Provides
-    fun providePostsRepository(firestore: FirebaseFirestore): HomeDataSource {
-        return HomeDataSource(firestore)
+    fun providePostsRepository(firestore: FirebaseFirestore): HomeNetworkDataSource {
+        return HomeNetworkDataSource(firestore)
     }
 }

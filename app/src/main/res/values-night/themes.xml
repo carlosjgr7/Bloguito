@@ -4,6 +4,8 @@
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/blue_semi_dark</item>
         <item name="android:windowBackground">@color/black</item>
+
+
     </style>
     <style name="Theme.Bloguito" parent="Base.Theme.Bloguito" />
 </resources>

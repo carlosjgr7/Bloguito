@@ -8,7 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.carlosjgr7.bloguito.R
 import com.carlosjgr7.bloguito.core.Resources
-import com.carlosjgr7.bloguito.databinding.FragmentMainBinding
+import com.carlosjgr7.bloguito.databinding.FragmentHomeBinding
 import com.carlosjgr7.bloguito.home.adapter.HomeAdapter
 import com.carlosjgr7.bloguito.home.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,29 +17,30 @@ import kotlinx.coroutines.launch
 private const val TAG = "HomeFragment"
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(R.layout.fragment_main) {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
-    private lateinit var binding: FragmentMainBinding
+    private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: HomeAdapter
     private val homeViewModel: HomeViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentMainBinding.bind(view)
+        binding = FragmentHomeBinding.bind(view)
+        homeViewModel.getLatestsPost()
 
         lifecycleScope.launch {
-            homeViewModel.getLatestsPost().collect {
-                when (it) {
+            homeViewModel.postState.collect{
+                when(it){
                     is Resources.Failure -> {
-                        binding.progressBar.visibility = View.GONE
-                        Toast.makeText(context, "ha ocurrido un error", Toast.LENGTH_SHORT).show()
+                        binding.shimmerViewContainer.visibility =View.GONE
+                        Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
                     }
-
-                    is Resources.Loading -> binding.progressBar.visibility = View.VISIBLE
-
+                    is Resources.Loading -> {
+                        binding.shimmerViewContainer.visibility = View.VISIBLE
+                    }
                     is Resources.Success -> {
-                        binding.progressBar.visibility = View.GONE
+                        binding.shimmerViewContainer.visibility =View.GONE
                         adapter = HomeAdapter(it.data)
                         binding.rvHome.adapter = adapter
                     }

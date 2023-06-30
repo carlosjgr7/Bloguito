@@ -22,8 +22,7 @@
     <color name="cyan">#006c7d</color>
     <color name="cyan2">#51AFBD</color>
     <color name="cyan3">#93AEB3</color>
-
-
+    <color name="background">#dddddd</color>
     <color name="pink_light">#F890BC</color>
     <color name="pink_dark">#EB5595</color>
 

@@ -25,7 +25,9 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
         if (navController.currentDestination?.id == R.id.loginFragment ||
-            navController.currentDestination?.id == R.id.presentationFragment  ) {
+            navController.currentDestination?.id == R.id.presentationFragment ||
+            navController.currentDestination?.id == R.id.mainFragment
+        ) {
             finish()
         } else {
             onBackPressedDispatcher.onBackPressed()

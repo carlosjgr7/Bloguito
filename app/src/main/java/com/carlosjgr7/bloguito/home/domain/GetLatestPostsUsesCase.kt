@@ -9,5 +9,5 @@ class GetLatestPostsUsesCase @Inject constructor(
     private val repository: HomeRepository
 )
 {
-    suspend operator fun invoke() = repository.getLatestPosts().flowOn(Dispatchers.IO)
+     operator fun invoke() = repository.getLatestPosts().flowOn(Dispatchers.IO)
 }

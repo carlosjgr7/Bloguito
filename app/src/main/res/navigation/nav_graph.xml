@@ -9,7 +9,7 @@
         android:id="@+id/mainFragment"
         android:name="com.carlosjgr7.bloguito.home.HomeFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.carlosjgr7.bloguito.splashscreen.ui.SplashFragment"
@@ -33,7 +33,18 @@
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/right_to_center"
+            app:exitAnim="@anim/center_to_left"
+            app:popEnterAnim="@anim/left_to_center"
+            app:popExitAnim="@anim/center_to_right" />
     </fragment>
     <fragment
         android:id="@+id/presentationFragment"
@@ -46,4 +57,9 @@
             app:enterAnim="@anim/down_to_center"
             app:exitAnim="@anim/center_to_down" />
     </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.carlosjgr7.bloguito.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

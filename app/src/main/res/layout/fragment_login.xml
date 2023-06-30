@@ -33,14 +33,14 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ed_loginlayout"
+        android:id="@+id/layout_login"
         style="@style/MaterialAlertDialog.Material3.Body.Text.CenterStacked"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:hint="User"
+        android:hint="Email"
         android:textColorHint="#cdcdcd"
         app:boxBackgroundColor="@color/blue_semi_dark"
         app:boxCornerRadiusBottomEnd="8dp"
@@ -50,7 +50,7 @@
         app:boxStrokeColor="@color/black"
         app:boxStrokeErrorColor="@color/red"
         app:counterEnabled="true"
-        app:counterMaxLength="20"
+        app:counterMaxLength="200"
         app:endIconMode="clear_text"
         app:hintTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:inputType="textEmailAddress"
-            android:maxLength="21"
+            android:maxLength="201"
             android:maxLines="1"
             android:singleLine="true"
             android:textColor="@color/white" />
@@ -76,9 +76,10 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ed_loginlayout">
+        app:layout_constraintTop_toBottomOf="@id/layout_login">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_pass"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -147,39 +148,44 @@
         android:text="Remember"
         android:textColor="#cdcdcd"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/tv_forgetpass"
+        app:layout_constraintBottom_toBottomOf="@id/tv_singup"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_forgetpass" />
+        app:layout_constraintTop_toTopOf="@id/tv_singup" />
 
 
     <TextView
-        android:id="@+id/tv_forgetpass"
+        android:id="@+id/tv_singup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
-        android:text="Forgot your password?"
+        android:text="Don't have an account? Sing up"
         android:textColor="#cdcdcd"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ed_passlayout" />
+        app:layout_constraintTop_toBottomOf="@id/ed_passlayout"/>
+    
 
-    <Button
-        android:id="@+id/btn_acces"
+    <com.apachat.loadingbutton.core.customViews.CircularProgressButton
+        android:id="@+id/btn_access"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        app:spinning_bar_width="4dp"
+        android:text="Login"
+        android:background="@drawable/btnborder"
+        android:textColor="@color/white"
+
+        app:spinning_bar_color="@color/white"
+        app:spinning_bar_padding="6dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/btnborder"
-        android:backgroundTint="@color/blue_semi_dark"
-        android:text="Login"
-        android:textColor="@color/white"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_forgetpass" />
+        app:layout_constraintTop_toBottomOf="@id/tv_singup"
+         />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -188,12 +194,13 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_acces">
+        app:layout_constraintTop_toBottomOf="@id/btn_access">
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btn_google"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="26dp"
             android:background="@drawable/round_img"
             android:src="@drawable/google" />
 
@@ -201,19 +208,13 @@
             android:id="@+id/btn_facebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             android:background="@drawable/round_img"
             android:src="@drawable/facebook" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/btn_linkdin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_img"
-            android:src="@drawable/linkedin" />
+
 
     </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
